@@ -1,0 +1,134 @@
+import Mock from 'mockjs'
+
+//圖表數據
+let List = []
+export default{
+    getStatisticalData:() =>{
+        //Mock.Random.float產生隨機數100到8000之間，保留小數最小0位最大0位
+        for(let i = 0; i <7; i++){
+            List.push(
+                Mock.mock({
+                    apple: Mock.Random.float(100,8000,0,0),
+                    vivo: Mock.Random.float(100,8000,0,0),
+                    oppo: Mock.Random.float(100,8000,0,0),
+                    meizu: Mock.Random.float(100,8000,0,0),
+                    samsung: Mock.Random.float(100,8000,0,0),
+                    xiaomi: Mock.Random.float(100,8000,0,0)
+                })
+            )
+        }
+        return{
+            code:20000,
+            data:{
+                //圓餅圖
+                videoData:[
+                    {
+                        name:'xiaomi',
+                        value:2999
+                    },
+                    {
+                        name:'apple',
+                        value:5999
+                    },
+                    {
+                        name:'vivo',
+                        value:1500
+                    },
+                    {
+                        name:'oppo',
+                        value:1999
+                    },
+                    {
+                        name:'meizu',
+                        value:2200
+                    },
+                    {
+                        name:'samsung',
+                        value:4500
+                    }
+                ],
+                //柱狀圖
+                userData:[
+                    {
+                        data:'週一',
+                        new:5,
+                        active:200
+                    },
+                    {
+                        data:'週二',
+                        new:10,
+                        active:500
+                    },
+                    {
+                        data:'週三',
+                        new:12,
+                        active:550
+                    },
+                    {
+                        data:'週四',
+                        new:60,
+                        active:800
+                    },
+                    {
+                        data:'週五',
+                        new:65,
+                        active:550
+                    },
+                    {
+                        data:'週六',
+                        new:53,
+                        active:770
+                    },
+                    {
+                        data:'週日',
+                        new:33,
+                        active:170
+                    }
+                ],
+                //折線圖
+                orderData:{
+                    date:['20221001','20221002','20221003','20221004','20221005','20221006','20221007'],
+                    data:List
+                },
+                tableData:[
+                    {
+                        name:'oppo',
+                        todayBuy:500,
+                        monthBuy:3500,
+                        totalBuy:22000
+                    },
+                    {
+                        name:'vivo',
+                        todayBuy:300,
+                        monthBuy:2200,
+                        totalBuy:24000
+                    },
+                    {
+                        name:'apple',
+                        todayBuy:800,
+                        monthBuy:4500,
+                        totalBuy:65000
+                    },
+                    {
+                        name:'xiaomi',
+                        todayBuy:1200,
+                        monthBuy:6500,
+                        totalBuy:45000
+                    },
+                    {
+                        name:'samsung',
+                        todayBuy:300,
+                        monthBuy:2000,
+                        totalBuy:34000
+                    },
+                    {
+                        name:'meizu',
+                        todayBuy:350,
+                        monthBuy:3000,
+                        totalBuy:22000
+                    }
+                ]
+            }
+        }
+    }
+}
